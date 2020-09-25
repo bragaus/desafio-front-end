@@ -1,0 +1,29 @@
+.listaPokemons--container {
+    left: 0;
+    width: 90%;
+    margin-top: 10%;
+}
+
+@media (min-width: 768px) {
+
+    .listaPokemons--container {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .listaPokemons--container {
+
+        justify-content: space-evenly;
+
+
+    }
+
+}

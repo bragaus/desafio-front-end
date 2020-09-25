@@ -1,0 +1,29 @@
+.pokemonDetalhado-container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.grupo--btn {
+
+    width: 30%;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.grupo--btn button {
+
+    padding: 2%;
+    border-radius: 20px;
+    width: 30%;
+    background-color: white;
+    color: black;
+
+}

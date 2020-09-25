@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+	background: #EFEFBB;
+	background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
+	margin: 0;
+}
+
+button {
+    border: 0;
+    background-color: #3b3b3b;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+input {
+
+    border-radius: 25px;
+
+    border: 0;
+    background: white;
+    outline: none;
+    
+    background-color: #3b3b3b;
+    color: white;
+
+}

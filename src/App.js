@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import store from './Store';
+
+import './styles.css'
+
+// Páginas
+import Home from './Pages/Home';
+import Detalhes from './Pages/Detalhes';
+
+const client = new ApolloClient({
+	uri: 'http://localhost:5000'
+});
+
+export default () => {
+	return (
+
+		<ApolloProvider client={client}>
+			<Provider store={store}>
+				<Router>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/detalhes/:id" component={Detalhes} />
+				</Router>
+			</Provider>
+		</ApolloProvider>
+
+	);
 }
-
-export default App;

@@ -1,0 +1,27 @@
+.listaAtaques--container table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    
+    font-size: 20px;
+    text-align: center;
+
+    margin-top: 3%;
+    
+}
+
+.listaAtaques--container table caption {
+    text-align: left;
+    margin-left: 4%;
+}
+
+.listaAtaques--container table td, th {
+    padding: 2%;
+}
+
+
+.ataques {
+    text-align: center;
+    margin-top: 2%;
+}
