@@ -42,9 +42,9 @@ const Home = ({ dispatch }) => {
                         id="filtro" 
                         type="text"
                         placeholder={mensagem ? mensagem : "Buscar pokemons"}
-                        onChange={(e) => setFiltro(e.target.value)}
+                        onChange={({ target: { value } }) => setFiltro(value)}
                     />
-                <button 
+                <button
                     type="submit" 
                     onClick={verificarFiltro}
                 >
@@ -52,7 +52,6 @@ const Home = ({ dispatch }) => {
                 </button>
 
             </div>
-
 
             <ListaPokemons />
 
