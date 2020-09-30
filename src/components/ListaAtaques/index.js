@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-export default ({ attacks }) => {
+export default ({ attacks: { fast, special } }) => {
 
     return (
 
@@ -20,12 +20,12 @@ export default ({ attacks }) => {
                     </tr>
                 </thead>
                 <tbody>
-                {attacks.fast.map((e) => (
+                {fast.map(({ name, type, damage }) => (
 
-                    <tr key={e.name}>
-                        <td> {e.name} </td>
-                        <td> {e.type} </td>
-                        <td> {e.damage} </td>
+                    <tr key={name}>
+                        <td> {name} </td>
+                        <td> {type} </td>
+                        <td> {damage} </td>
                     </tr>                        
 
                 ))}
@@ -42,12 +42,12 @@ export default ({ attacks }) => {
                     </tr>
                 </thead>
                 <tbody>
-                {attacks.special.map((e) => (
+                {special.map(({ name, type, damage }) => (
 
-                    <tr key={e.name}>
-                        <td> {e.name} </td>
-                        <td> {e.type} </td>
-                        <td> {e.damage} </td>
+                    <tr key={name}>
+                        <td> {name} </td>
+                        <td> {type} </td>
+                        <td> {damage} </td>
                     </tr>
 
                 ))}
