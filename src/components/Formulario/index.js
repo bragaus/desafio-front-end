@@ -18,8 +18,8 @@ const Formulario = ({ pokemon: { id }, dispatch }) => {
 
             <form
                 className="formulario"
-                onSubmit={({ preventDefault }) => {
-                    preventDefault()
+                onSubmit={(e) => {
+                    e.preventDefault()
                     dispatch(modificarDadosPokemon({ id, name, tipos }))
                 }}
             >
