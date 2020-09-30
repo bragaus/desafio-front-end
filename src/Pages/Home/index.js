@@ -17,7 +17,7 @@ const Home = ({ dispatch }) => {
         dispatch(lidarComFiltro(filtro, filtrar));
     }, [filtrar])
 
-    function verificarFiltro() {
+    const verificarFiltro = () => {
 
         if (filtro.trim() && filtrar) {
             setFiltro('');
