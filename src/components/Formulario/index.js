@@ -6,7 +6,7 @@ import { modificarDadosPokemon } from '../../Store/actions/pokemons';
 
 import './styles.css';
 
-const Formulario = ({ pokemon, dispatch }) => {
+const Formulario = ({ pokemon: { id }, dispatch }) => {
 
     // Estados que recebem os dados digitados nos inputs
     const [name, setName] = useState('');
@@ -18,9 +18,9 @@ const Formulario = ({ pokemon, dispatch }) => {
 
             <form
                 className="formulario"
-                onSubmit={(e) => {
-                    e.preventDefault()
-                    dispatch(modificarDadosPokemon({ id: pokemon.id, name, tipos }))
+                onSubmit={({ preventDefault }) => {
+                    preventDefault()
+                    dispatch(modificarDadosPokemon({ id, name, tipos }))
                 }}
             >
                 <div className="grupo--input">
@@ -29,7 +29,7 @@ const Formulario = ({ pokemon, dispatch }) => {
                         type="text" 
                         placeholder='Entre com o nome' 
                         id="nome"
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={({ target: {value} }) => setName(value)}
                     />
 
                     <input
@@ -37,7 +37,7 @@ const Formulario = ({ pokemon, dispatch }) => {
                         type="text" 
                         placeholder='Entre com o tipo'
                         id="tipo"
-                        onChange={(e) => setTipos(e.target.value)}
+                        onChange={({ target: {value} }) => setTipos(value)}
                     />
                 </div>
 
