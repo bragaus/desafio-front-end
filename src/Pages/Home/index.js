@@ -15,7 +15,7 @@ const Home = ({ dispatch }) => {
 
     useEffect(() => {
         dispatch(lidarComFiltro(filtro, filtrar));
-    }, [filtrar])
+    }, [dispatch, filtrar, filtro])
 
     const verificarFiltro = () => {
 
