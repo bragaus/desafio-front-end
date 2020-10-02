@@ -10,8 +10,7 @@ import Pokemon from '../Pokemon';
 
 import './styles.css';
 
-const listaPokemons = ({ dados: { filtro, filtrar } }) => {
-
+const ListaPokemons = ({ filtro, filtrar }) => {
     return (
 
         <div className="listaPokemons--container">
@@ -63,4 +62,6 @@ const listaPokemons = ({ dados: { filtro, filtrar } }) => {
     
 }
 
-export default connect(state => ({ dados: state.filtro }))(listaPokemons);
+export default connect((
+    { filtro: { pokemonFiltrado: { filtro, filtrar } = {} } }) => ({filtro, filtrar})
+)(ListaPokemons);
