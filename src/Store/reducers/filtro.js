@@ -1,13 +1,17 @@
-const INITIAL_STATE = {}
+const INITIAL_STATE = {
+    pokemonFiltrado: {
+        filtro: '',
+        filtrar: false
+    }
+}
 
-export default function filtro(state = INITIAL_STATE, action) {
+export default (state = INITIAL_STATE, { type, data}) => {
 
-    if (action.type === 'LIDAR_COM_FILTRO') {
+    if (type === 'LIDAR_COM_FILTRO') {
 
         return {
             ...state,
-            filtro: action.filtro,
-            filtrar: action.filtrar
+            pokemonFiltrado: data
         };        
 
     }
