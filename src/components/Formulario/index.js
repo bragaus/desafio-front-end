@@ -6,7 +6,7 @@ import { modificarDadosPokemon } from '../../Store/actions/pokemons';
 
 import './styles.css';
 
-const Formulario = ({ pokemon: { id }, dispatch }) => {
+const Formulario = ({ id , dispatch }) => {
 
     // Estados que recebem os dados digitados nos inputs
     const [name, setName] = useState('');
@@ -48,5 +48,7 @@ const Formulario = ({ pokemon: { id }, dispatch }) => {
     );
 }
 
-export default connect(state => ({ pokemon: state.pokemon.dadosPokemonDetalhado.pokemon }))(Formulario);
+export default connect((
+    { pokemon: { dadosPokemonDetalhado: { pokemon: { id } = {} } } }) => ({ id })
+)(Formulario);
 
