@@ -17,6 +17,10 @@ div.pokemon--container button {
 div.pokemon--container figure {
     background: white;
     border-radius: 25px;
+
+    height: 100%;
+    border: 1px solid blueviolet;
+    min-height: 350px;
     
     display: flex;
     justify-content: center;
