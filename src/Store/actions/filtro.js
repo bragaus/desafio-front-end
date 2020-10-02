@@ -1,7 +1,6 @@
-export function lidarComFiltro(filtro, filtrar) {
+export const lidarComFiltro = (data) => {
     return {
         type: 'LIDAR_COM_FILTRO',
-        filtro,
-        filtrar
+        data
     };
 }
