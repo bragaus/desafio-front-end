@@ -7,7 +7,10 @@ import ListaAtaques from '../ListaAtaques';
 
 import './styles.css';
 
-const Pokemon = ({ pokemon: { id, image, name, types, attacks }, dados}) => {
+const Pokemon = ({ 
+    pokemon: { id, image, name, types, attacks }, 
+    dadosPokemonModificado: { id: idModificado, name: nomeModificado, tipos: tipoModificado } 
+}) => {
 
     // Formatando os tipos para separar em virgula (tipo1, tipo2, tipo3)
     const tipos = (types.map((tipo) => tipo)).join(', ')
@@ -30,9 +33,9 @@ const Pokemon = ({ pokemon: { id, image, name, types, attacks }, dados}) => {
                 <figcaption>
                     
                     {/* Controlando qual pokemon foi modificado na lista de pokemons */}
-                    {id === dados.id ? (<>
-                        <h1>{dados.name || name} </h1>
-                        <h3>{dados.tipos || tipos}</h3>     
+                    {id === idModificado ? (<>
+                        <h1>{nomeModificado || name} </h1>
+                        <h3>{tipoModificado || tipos}</h3>     
                     </>) : (<>
                         <h1>{name}</h1>
                         <h3>{tipos}</h3>                       
@@ -50,6 +53,6 @@ const Pokemon = ({ pokemon: { id, image, name, types, attacks }, dados}) => {
 
 }
 
-export default connect(state => ({
-    dados: state.pokemon.dadosPokemonModificado 
-}))(Pokemon);
+export default connect((
+    { pokemon: { dadosPokemonModificado  } }) => ({ dadosPokemonModificado })
+)(Pokemon);
