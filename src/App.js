@@ -1,7 +1,10 @@
 import React from 'react';
+
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import { Provider } from 'react-redux';
 
 import store from './Store';
