@@ -13,7 +13,6 @@ describe('Teste para o component Formulario', () => {
             <Provider store={store}>
                 <Formulario />
             </Provider>
-
         )
 
         const fieldNode = await waitFor(
@@ -36,7 +35,6 @@ describe('Teste para o component Formulario', () => {
             <Provider store={store}>
                 <Formulario />
             </Provider>
-
         )
 
         const fieldNode = await waitFor(
