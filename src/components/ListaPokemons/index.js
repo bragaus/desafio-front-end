@@ -11,50 +11,40 @@ import Pokemon from '../Pokemon';
 import './styles.css';
 
 const ListaPokemons = ({ filtro, filtrar }) => {
+
     return (
 
         <div className="listaPokemons--container">
             <Query query={LISTAR_TODOS_POKEMONS}>
-                {({ loading, error, data }) => {
+
+                {({ loading, error, data: { pokemons } = {} }) => {
 
                     if (loading) return <h4>Loading...</h4>;
                     if (error) console.log(error);
                     
-                    const { pokemons } = data;
+                    if (filtrar) {
+                        pokemons = pokemons.filter(pokemon => (pokemon.name.toLowerCase().trim() === filtro.toLowerCase().trim()))
+                    }
 
                     return (
 
                         <Fragment>
 
-                            {/* Se não foi filtrado um pokemon 
-                            é carregado a lista de pokemons completa
-                            na home page */}
-                            {!filtrar ? (
-                                pokemons.map((pokemon, index) => (
+                            {pokemons.map((pokemon, index) => (
 
-                                    <Pokemon
-                                        key={index} 
-                                        pokemon={pokemon} 
-                                    />
+                                <Pokemon
+                                    key={index} 
+                                    pokemon={pokemon} 
+                                />
 
-                                ))
-                            ) : (
-
-                                // se foi filtrado é verificado qual pokemon foi escolhido
-                                pokemons.map((pokemon, index) => {
-                                    
-                                    if (pokemon.name.toLowerCase().trim() === filtro.toLowerCase().trim()) {
-                                        return <Pokemon key={index} pokemon={pokemon} />                                        
-                                    }
-                                    
-                                })
-                            )}
+                            ))}
 
                         </Fragment>
 
                     );
 
                 }}
+
             </Query>
         </div>
 
