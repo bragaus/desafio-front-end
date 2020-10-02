@@ -6,24 +6,24 @@ const INITIAL_STATE = {
     dadosPokemonDetalhado: []
 }
 
-export default function pokemon(state = INITIAL_STATE, action) {
+export default (state = INITIAL_STATE, { type, data }) => {
 
-    switch (action.type) {
+    switch (type) {
 
         case 'CARREGAR_POKEMON_DETALHADO':
             return {
                 ...state,
-                dadosPokemonDetalhado: action.data
+                dadosPokemonDetalhado: data
             };
-            break;
 
         case 'MODIFICAR_POKEMON':
             return {
                 ...state,
-                dadosPokemonModificado: action.data
+                dadosPokemonModificado: data
             };
-            break;
-         
+
+        default:
+
     }
 
     return state;
